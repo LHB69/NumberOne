@@ -293,13 +293,13 @@ public class IntFrmMatricula extends JInternalFrame {
 		lblCep.setBounds(659, 272, 37, 16);
 		getContentPane().add(lblCep);
 
-		btnRespfinanceiro = new JButton("RESPONS\u00C1VEL");
+		btnRespfinanceiro = new JButton("<html><br>RESPONS\u00C1VEL ACAD\u00CAMICO</br></html>");
 		btnRespfinanceiro.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				invokTelaResponsavel();
 			}
 		});
-		btnRespfinanceiro.setBounds(867, 269, 140, 25);
+		btnRespfinanceiro.setBounds(867, 269, 140, 61);
 		getContentPane().add(btnRespfinanceiro);
 
 		JSeparator separator_1 = new JSeparator();
