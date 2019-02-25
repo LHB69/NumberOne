@@ -22,6 +22,7 @@ import javax.swing.table.DefaultTableModel;
 import javax.swing.JTabbedPane;
 import javax.swing.JToolBar;
 import javax.swing.JLabel;
+import javax.swing.JLayeredPane;
 
 public class Principal {
 
@@ -69,7 +70,7 @@ public class Principal {
 		desktopPane = new JDesktopPane();
 		desktopPane.setBorder(new LineBorder(SystemColor.activeCaptionText));
 		desktopPane.setBackground(SystemColor.menu);
-		desktopPane.setBounds(652, 48, 56, 50); //desktopPane.setBounds(67, 448, 1070, 560);
+		desktopPane.setBounds(88, 496, 1670, 531); //desktopPane.setBounds(67, 448, 1070, 560);
 		frame.getContentPane().add(desktopPane);
 		
 		btnMatricula = new JButton("MATRÍCULA");
