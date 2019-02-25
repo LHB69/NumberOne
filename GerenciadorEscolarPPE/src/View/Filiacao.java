@@ -20,6 +20,7 @@ import java.awt.Window.Type;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JCheckBox;
+import javax.swing.JFormattedTextField.AbstractFormatter;
 
 public class Filiacao extends JDialog {
 
@@ -33,6 +34,14 @@ public class Filiacao extends JDialog {
 	private JButton btnSalvar;
 	private JFormattedTextField frmCpfOutro; 
 	private JCheckBox chckbxRespFinanPai, chckbxRespFinanMae, chckboxOutroResponsavel;
+	private JTextField textField;
+	private JTextField textField_1;
+	private JTextField textField_2;
+	private JTextField textField_3;
+	private JTextField textField_4;
+	private JTextField textField_5;
+	private JTextField textField_6;
+	private JTextField textField_7;
 
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
@@ -101,10 +110,10 @@ public class Filiacao extends JDialog {
 	
 	public Filiacao() {
 		setModal(true);
-		setBounds(100, 100, 890, 520);
+		setBounds(100, 100, 890, 680);
 		
 		setDefaultCloseOperation(DISPOSE_ON_CLOSE);
-		setBounds(100, 100, 890, 520);
+		setBounds(100, 100, 890, 680);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
@@ -202,50 +211,50 @@ public class Filiacao extends JDialog {
 		txtEmailMae.setColumns(10);
 
 		JSeparator separator = new JSeparator();
-		separator.setBounds(58, 156, 745, 5);
+		separator.setBounds(58, 225, 745, 5);
 		contentPane.add(separator);
 
 		JLabel lblNomeDoPai = new JLabel("NOME DO PAI:");
-		lblNomeDoPai.setBounds(58, 170, 111, 16);
+		lblNomeDoPai.setBounds(58, 239, 111, 16);
 		lblNomeDoPai.setFont(new Font("Tahoma", Font.BOLD, 14));
 		contentPane.add(lblNomeDoPai);
 
 		txtNomePai = new JTextField();
-		txtNomePai.setBounds(173, 167, 351, 22);
+		txtNomePai.setBounds(173, 236, 351, 22);
 		txtNomePai.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		txtNomePai.setColumns(10);
 		contentPane.add(txtNomePai);
 
 		JLabel label_7 = new JLabel("ESTADO CIVIL:");
-		label_7.setBounds(559, 170, 111, 16);
+		label_7.setBounds(559, 239, 111, 16);
 		label_7.setFont(new Font("Tahoma", Font.BOLD, 14));
 		contentPane.add(label_7);
 
 		JComboBox cboxEstCivilPai = new JComboBox();
 		cboxEstCivilPai.setModel(new DefaultComboBoxModel(new String[] {"-----------", "SOLTEIRO(A)", "CASADO(A)", "SEPARADO(A)", "DIVORCIADO(A)", "VI\u00DAVO(A)"}));
-		cboxEstCivilPai.setBounds(682, 167, 121, 22);
+		cboxEstCivilPai.setBounds(682, 236, 121, 22);
 		cboxEstCivilPai.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		contentPane.add(cboxEstCivilPai);
 
 		JLabel label_8 = new JLabel("RG:");
-		label_8.setBounds(58, 205, 30, 16);
+		label_8.setBounds(58, 274, 30, 16);
 		label_8.setFont(new Font("Tahoma", Font.BOLD, 14));
 		contentPane.add(label_8);
 
 		txtRgPai = new JTextField();
-		txtRgPai.setBounds(95, 202, 140, 22);
+		txtRgPai.setBounds(95, 271, 140, 22);
 		txtRgPai.setHorizontalAlignment(SwingConstants.CENTER);
 		txtRgPai.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		txtRgPai.setColumns(10);
 		contentPane.add(txtRgPai);
 
 		JLabel label_9 = new JLabel("\u00D3RG. EXP.:");
-		label_9.setBounds(262, 205, 81, 16);
+		label_9.setBounds(262, 274, 81, 16);
 		label_9.setFont(new Font("Tahoma", Font.BOLD, 14));
 		contentPane.add(label_9);
 
 		JComboBox cboxOrgExpRgPai = new JComboBox();
-		cboxOrgExpRgPai.setBounds(352, 202, 121, 22);
+		cboxOrgExpRgPai.setBounds(352, 271, 121, 22);
 		cboxOrgExpRgPai.setModel(new DefaultComboBoxModel(new String[] { "",
 				"SSP - Secretaria de Seguran\u00E7a P\u00FAblica", "PM - Pol\u00EDcia Militar", "PC - Policia Civil",
 				"CNT - Carteira Nacional de Habilita\u00E7\u00E3o", "DIC - Diretoria de Identifica\u00E7\u00E3o Civil",
@@ -262,111 +271,111 @@ public class Filiacao extends JDialog {
 		contentPane.add(cboxOrgExpRgPai);
 
 		JLabel label_10 = new JLabel("UF:");
-		label_10.setBounds(511, 205, 30, 16);
+		label_10.setBounds(511, 274, 30, 16);
 		label_10.setFont(new Font("Tahoma", Font.BOLD, 14));
 		contentPane.add(label_10);
 
 		JComboBox cboxUfRgPai = new JComboBox();
-		cboxUfRgPai.setBounds(543, 202, 68, 22);
+		cboxUfRgPai.setBounds(543, 271, 68, 22);
 		cboxUfRgPai.setModel(new DefaultComboBoxModel(new String[] {"----", "AC", "AL", "AP", "AM", "BA", "CE", "DF", "ES", "GO", "MA", "MT", "MS", "MG", "PA", "PB", "PR", "PE", "PI", "RJ", "RN", "RS", "RO", "RR", "SC", "SP", "SE", "TO"}));
 		contentPane.add(cboxUfRgPai);
 
 		JLabel label_11 = new JLabel("CPF:");
-		label_11.setBounds(637, 205, 37, 16);
+		label_11.setBounds(637, 274, 37, 16);
 		label_11.setFont(new Font("Tahoma", Font.BOLD, 14));
 		contentPane.add(label_11);
 
 		JFormattedTextField frmCpfPai = new JFormattedTextField();
-		frmCpfPai.setBounds(682, 202, 121, 22);
+		frmCpfPai.setBounds(682, 271, 121, 22);
 		frmCpfPai.setHorizontalAlignment(SwingConstants.CENTER);
 		frmCpfPai.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		contentPane.add(frmCpfPai);
 
 		JLabel label_12 = new JLabel("CELULAR:");
-		label_12.setBounds(58, 245, 70, 16);
+		label_12.setBounds(58, 314, 70, 16);
 		label_12.setFont(new Font("Tahoma", Font.BOLD, 14));
 		contentPane.add(label_12);
 
 		JFormattedTextField frmCelularPai = new JFormattedTextField();
-		frmCelularPai.setBounds(140, 242, 121, 22);
+		frmCelularPai.setBounds(140, 311, 121, 22);
 		frmCelularPai.setHorizontalAlignment(SwingConstants.CENTER);
 		frmCelularPai.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		contentPane.add(frmCelularPai);
 
 		JLabel label_13 = new JLabel("E-MAIL:");
-		label_13.setBounds(295, 245, 62, 16);
+		label_13.setBounds(295, 314, 62, 16);
 		label_13.setFont(new Font("Tahoma", Font.BOLD, 14));
 		contentPane.add(label_13);
 
 		txtEmailPai = new JTextField();
-		txtEmailPai.setBounds(362, 242, 291, 22);
+		txtEmailPai.setBounds(362, 311, 291, 22);
 		txtEmailPai.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		txtEmailPai.setColumns(10);
 		contentPane.add(txtEmailPai);
 
 		JSeparator separator_1 = new JSeparator();
-		separator_1.setBounds(58, 274, 745, 5);
+		separator_1.setBounds(58, 412, 745, 5);
 		contentPane.add(separator_1);
 
 		label_6 = new JLabel("NOME:");
-		label_6.setBounds(58, 323, 56, 16);
+		label_6.setBounds(58, 461, 56, 16);
 		label_6.setFont(new Font("Tahoma", Font.BOLD, 14));
 		label_6.setEnabled(false);
 		contentPane.add(label_6);
 
 		txtNomeOutroResponsavel = new JTextField();
-		txtNomeOutroResponsavel.setBounds(117, 320, 407, 22);
+		txtNomeOutroResponsavel.setBounds(117, 458, 407, 22);
 		txtNomeOutroResponsavel.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		txtNomeOutroResponsavel.setColumns(10);
 		txtNomeOutroResponsavel.setEnabled(false);
 		contentPane.add(txtNomeOutroResponsavel);
 
 		label_14 = new JLabel("CELULAR:");
-		label_14.setBounds(58, 388, 70, 16);
+		label_14.setBounds(58, 526, 70, 16);
 		label_14.setFont(new Font("Tahoma", Font.BOLD, 14));
 		label_14.setEnabled(false);
 		contentPane.add(label_14);
 
 		label_15 = new JLabel("E-MAIL:");
-		label_15.setBounds(286, 388, 62, 16);
+		label_15.setBounds(286, 526, 62, 16);
 		label_15.setFont(new Font("Tahoma", Font.BOLD, 14));
 		label_15.setEnabled(false);
 		contentPane.add(label_15);
 
 		txtEmailOutro = new JTextField();
-		txtEmailOutro.setBounds(351, 385, 452, 22);
+		txtEmailOutro.setBounds(351, 523, 452, 22);
 		txtEmailOutro.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		txtEmailOutro.setColumns(10);
 		txtEmailOutro.setEnabled(false);
 		contentPane.add(txtEmailOutro);
 
 		frmCelularOutro = new JFormattedTextField();
-		frmCelularOutro.setBounds(140, 385, 121, 22);
+		frmCelularOutro.setBounds(140, 523, 121, 22);
 		frmCelularOutro.setHorizontalAlignment(SwingConstants.CENTER);
 		frmCelularOutro.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		frmCelularOutro.setEnabled(false);
 		contentPane.add(frmCelularOutro);
 
 		btnSalvar = new JButton("SALVAR");
-		btnSalvar.setBounds(706, 435, 97, 25);
+		btnSalvar.setBounds(706, 573, 97, 25);
 		contentPane.add(btnSalvar);
 		
 		label_16 = new JLabel("ESTADO CIVIL:");
 		label_16.setFont(new Font("Tahoma", Font.BOLD, 14));
-		label_16.setBounds(559, 320, 111, 16);
+		label_16.setBounds(559, 458, 111, 16);
 		label_16.setEnabled(false);
 		contentPane.add(label_16);
 		
 		cboxEstCivilOutro = new JComboBox();
 		cboxEstCivilOutro.setModel(new DefaultComboBoxModel(new String[] {"-----------", "SOLTEIRO(A)", "CASADO(A)", "SEPARADO(A)", "DIVORCIADO(A)", "VI\u00DAVO(A)"}));
 		cboxEstCivilOutro.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		cboxEstCivilOutro.setBounds(682, 317, 121, 22);
+		cboxEstCivilOutro.setBounds(682, 455, 121, 22);
 		cboxEstCivilOutro.setEnabled(false);
 		contentPane.add(cboxEstCivilOutro);
 		
 		label_17 = new JLabel("RG:");
 		label_17.setFont(new Font("Tahoma", Font.BOLD, 14));
-		label_17.setBounds(58, 356, 30, 16);
+		label_17.setBounds(58, 494, 30, 16);
 		label_17.setEnabled(false);
 		contentPane.add(label_17);
 		
@@ -374,45 +383,45 @@ public class Filiacao extends JDialog {
 		txtRgOutro.setHorizontalAlignment(SwingConstants.CENTER);
 		txtRgOutro.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		txtRgOutro.setColumns(10);
-		txtRgOutro.setBounds(95, 353, 140, 22);
+		txtRgOutro.setBounds(95, 491, 140, 22);
 		txtRgOutro.setEnabled(false);
 		contentPane.add(txtRgOutro);
 		
 		label_18 = new JLabel("\u00D3RG. EXP.:");
 		label_18.setFont(new Font("Tahoma", Font.BOLD, 14));
-		label_18.setBounds(262, 356, 81, 16);
+		label_18.setBounds(262, 494, 81, 16);
 		label_18.setEnabled(false);
 		contentPane.add(label_18);
 		
 		cboxOrgExpOutro = new JComboBox();
 		cboxOrgExpOutro.setModel(new DefaultComboBoxModel(new String[] {"", "SSP - Secretaria de Seguran\u00E7a P\u00FAblica", "PM - Pol\u00EDcia Militar", "PC - Policia Civil", "CNT - Carteira Nacional de Habilita\u00E7\u00E3o", "DIC - Diretoria de Identifica\u00E7\u00E3o Civil", "CTPS - Carteira de Trabaho e Previd\u00EAncia Social", "FGTS - Fundo de Garantia do Tempo de Servi\u00E7o", "IFP - Instituto F\u00E9lix Pacheco", "IPF - Instituto Pereira Faustino", "IML - Instituto M\u00E9dico-Legal", "MTE - Minist\u00E9rio do Trabalho e Emprego", "MMA - Minist\u00E9rio da Marinha", "MAE - Minist\u00E9rio da Aeron\u00E1utica", "MEX - Minist\u00E9rio do Ex\u00E9rcito", "POF - Pol\u00EDcia Federal", "POM - Pol\u00EDcia Militar", "SES - Carteira de Estrangeiro", "SJS - Secretaria da Justi\u00E7a e Seguran\u00E7a", "SJTS - Secretaria da Justi\u00E7a do Trabalho e Seguran\u00E7a", "ZZZ - Outros (inclusive exterior) "}));
 		cboxOrgExpOutro.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		cboxOrgExpOutro.setBounds(352, 353, 121, 22);
+		cboxOrgExpOutro.setBounds(352, 491, 121, 22);
 		cboxOrgExpOutro.setEnabled(false);
 		contentPane.add(cboxOrgExpOutro);
 		
 		label_19 = new JLabel("UF:");
 		label_19.setFont(new Font("Tahoma", Font.BOLD, 14));
-		label_19.setBounds(511, 356, 30, 16);
+		label_19.setBounds(511, 494, 30, 16);
 		label_19.setEnabled(false);
 		contentPane.add(label_19);
 		
 		cboxUfRgOutro = new JComboBox();
 		cboxUfRgOutro.setModel(new DefaultComboBoxModel(new String[] {"----", "AC", "AL", "AP", "AM", "BA", "CE", "DF", "ES", "GO", "MA", "MT", "MS", "MG", "PA", "PB", "PR", "PE", "PI", "RJ", "RN", "RS", "RO", "RR", "SC", "SP", "SE", "TO"}));
-		cboxUfRgOutro.setBounds(543, 353, 68, 22);
+		cboxUfRgOutro.setBounds(543, 491, 68, 22);
 		cboxUfRgOutro.setEnabled(false);
 		contentPane.add(cboxUfRgOutro);
 		
 		label_20 = new JLabel("CPF:");
 		label_20.setFont(new Font("Tahoma", Font.BOLD, 14));
-		label_20.setBounds(637, 356, 37, 16);
+		label_20.setBounds(637, 494, 37, 16);
 		label_20.setEnabled(false);
 		contentPane.add(label_20);
 		
 		frmCpfOutro = new JFormattedTextField();
 		frmCpfOutro.setHorizontalAlignment(SwingConstants.CENTER);
 		frmCpfOutro.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		frmCpfOutro.setBounds(682, 353, 121, 22);
+		frmCpfOutro.setBounds(682, 491, 121, 22);
 		frmCpfOutro.setEnabled(false);
 		contentPane.add(frmCpfOutro);
 		
@@ -424,12 +433,12 @@ public class Filiacao extends JDialog {
 				configTela();
 			}
 		});
-		chckboxOutroResponsavel.setBounds(58, 288, 213, 25);
+		chckboxOutroResponsavel.setBounds(58, 426, 213, 25);
 		contentPane.add(chckboxOutroResponsavel);
 		
 		chckbxRespFinanPai = new JCheckBox("");
 		buttonGroup_1.add(chckbxRespFinanPai);
-		chckbxRespFinanPai.setBounds(673, 236, 25, 25);
+		chckbxRespFinanPai.setBounds(673, 305, 25, 25);
 		contentPane.add(chckbxRespFinanPai);
 		
 		chckbxRespFinanMae = new JCheckBox("");
@@ -450,12 +459,140 @@ public class Filiacao extends JDialog {
 		
 		label_21 = new JLabel("RESPONS\u00C1VEL");
 		label_21.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		label_21.setBounds(706, 233, 97, 16);
+		label_21.setBounds(706, 302, 97, 16);
 		contentPane.add(label_21);
 		
 		label_22 = new JLabel("FINANCEIRO");
 		label_22.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		label_22.setBounds(706, 249, 97, 16);
+		label_22.setBounds(706, 318, 97, 16);
 		contentPane.add(label_22);
+		
+		JLabel label_23 = new JLabel("RUA:");
+		label_23.setFont(new Font("Tahoma", Font.BOLD, 14));
+		label_23.setBounds(58, 159, 37, 16);
+		contentPane.add(label_23);
+		
+		textField = new JTextField();
+		textField.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		textField.setColumns(10);
+		textField.setBounds(100, 156, 325, 22);
+		contentPane.add(textField);
+		
+		JLabel label_24 = new JLabel("N\u00DAMERO:");
+		label_24.setFont(new Font("Tahoma", Font.BOLD, 14));
+		label_24.setBounds(453, 159, 70, 16);
+		contentPane.add(label_24);
+		
+		textField_1 = new JTextField();
+		textField_1.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		textField_1.setColumns(10);
+		textField_1.setBounds(530, 156, 116, 22);
+		contentPane.add(textField_1);
+		
+		JLabel label_25 = new JLabel("BAIRRO:");
+		label_25.setFont(new Font("Tahoma", Font.BOLD, 14));
+		label_25.setBounds(58, 196, 70, 16);
+		contentPane.add(label_25);
+		
+		textField_2 = new JTextField();
+		textField_2.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		textField_2.setColumns(10);
+		textField_2.setBounds(128, 193, 220, 22);
+		contentPane.add(textField_2);
+		
+		JLabel label_26 = new JLabel("CIDADE:");
+		label_26.setFont(new Font("Tahoma", Font.BOLD, 14));
+		label_26.setBounds(380, 196, 70, 16);
+		contentPane.add(label_26);
+		
+		textField_3 = new JTextField();
+		textField_3.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		textField_3.setColumns(10);
+		textField_3.setBounds(449, 193, 206, 22);
+		contentPane.add(textField_3);
+		
+		JLabel label_27 = new JLabel("UF:");
+		label_27.setFont(new Font("Tahoma", Font.BOLD, 14));
+		label_27.setBounds(701, 196, 30, 16);
+		contentPane.add(label_27);
+		
+		JComboBox comboBox = new JComboBox();
+		comboBox.setBounds(735, 193, 68, 22);
+		contentPane.add(comboBox);
+		
+		JLabel label_28 = new JLabel("CEP.:");
+		label_28.setFont(new Font("Tahoma", Font.BOLD, 14));
+		label_28.setBounds(667, 159, 37, 16);
+		contentPane.add(label_28);
+		
+		JFormattedTextField formattedTextField = new JFormattedTextField((AbstractFormatter) null);
+		formattedTextField.setHorizontalAlignment(SwingConstants.CENTER);
+		formattedTextField.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		formattedTextField.setBounds(716, 156, 87, 22);
+		contentPane.add(formattedTextField);
+		
+		JLabel label_29 = new JLabel("RUA:");
+		label_29.setFont(new Font("Tahoma", Font.BOLD, 14));
+		label_29.setBounds(58, 346, 37, 16);
+		contentPane.add(label_29);
+		
+		textField_4 = new JTextField();
+		textField_4.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		textField_4.setColumns(10);
+		textField_4.setBounds(100, 343, 325, 22);
+		contentPane.add(textField_4);
+		
+		JLabel label_30 = new JLabel("N\u00DAMERO:");
+		label_30.setFont(new Font("Tahoma", Font.BOLD, 14));
+		label_30.setBounds(453, 346, 70, 16);
+		contentPane.add(label_30);
+		
+		textField_5 = new JTextField();
+		textField_5.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		textField_5.setColumns(10);
+		textField_5.setBounds(530, 343, 116, 22);
+		contentPane.add(textField_5);
+		
+		JLabel label_31 = new JLabel("BAIRRO:");
+		label_31.setFont(new Font("Tahoma", Font.BOLD, 14));
+		label_31.setBounds(58, 383, 70, 16);
+		contentPane.add(label_31);
+		
+		textField_6 = new JTextField();
+		textField_6.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		textField_6.setColumns(10);
+		textField_6.setBounds(128, 380, 220, 22);
+		contentPane.add(textField_6);
+		
+		JLabel label_32 = new JLabel("CIDADE:");
+		label_32.setFont(new Font("Tahoma", Font.BOLD, 14));
+		label_32.setBounds(380, 383, 70, 16);
+		contentPane.add(label_32);
+		
+		textField_7 = new JTextField();
+		textField_7.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		textField_7.setColumns(10);
+		textField_7.setBounds(449, 380, 206, 22);
+		contentPane.add(textField_7);
+		
+		JLabel label_33 = new JLabel("UF:");
+		label_33.setFont(new Font("Tahoma", Font.BOLD, 14));
+		label_33.setBounds(701, 383, 30, 16);
+		contentPane.add(label_33);
+		
+		JComboBox comboBox_1 = new JComboBox();
+		comboBox_1.setBounds(735, 380, 68, 22);
+		contentPane.add(comboBox_1);
+		
+		JLabel label_34 = new JLabel("CEP.:");
+		label_34.setFont(new Font("Tahoma", Font.BOLD, 14));
+		label_34.setBounds(667, 346, 37, 16);
+		contentPane.add(label_34);
+		
+		JFormattedTextField formattedTextField_1 = new JFormattedTextField((Object) null);
+		formattedTextField_1.setHorizontalAlignment(SwingConstants.CENTER);
+		formattedTextField_1.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		formattedTextField_1.setBounds(716, 343, 87, 22);
+		contentPane.add(formattedTextField_1);
 	}
 }
