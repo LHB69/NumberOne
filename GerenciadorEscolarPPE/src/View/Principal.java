@@ -65,19 +65,17 @@ public class Principal {
 		frame.getContentPane().setLayout(null);
 		frame.setResizable(false);
 		frame.setLocationRelativeTo(null);
-		//frame.setLocation(x, y);
 		
 		desktopPane = new JDesktopPane();
 		desktopPane.setBorder(new LineBorder(SystemColor.activeCaptionText));
 		desktopPane.setBackground(SystemColor.menu);
-		desktopPane.setBounds(88, 496, 1670, 531); //desktopPane.setBounds(67, 448, 1070, 560);
+		desktopPane.setBounds(88, 496, 1670, 531);
 		frame.getContentPane().add(desktopPane);
 		
 		btnMatricula = new JButton("MATRÍCULA");
 		btnMatricula.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				invokTelaMatricula();
- 
 }
 		});
 		btnMatricula.setBounds(67, 48, 125, 62);
