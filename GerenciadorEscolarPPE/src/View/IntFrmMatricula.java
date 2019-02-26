@@ -59,26 +59,26 @@ public class IntFrmMatricula extends JInternalFrame {
 		return Mask;
 	}
 
-	private void configNomeSocial() {
+	private void configNomeSocial() { //ATIVA E DESATIVA O NOME SOCIAL
 		if (rdbtnNomeSocial.isSelected()) {
 			txtNomeSocial.setEnabled(true);
 		} else {
 			txtNomeSocial.setText("");
 			txtNomeSocial.setEnabled(false);
 		}
-	}
+	}	
 
-	private void invokTelaFiliacao() {
+	private void invokTelaFiliacao() { //CHAMA A TELA DE CADASTRO DOS PAIS
 		Filiacao dialog = new Filiacao();
 		dialog.setVisible(true);
 	}
 
-	private void invokTelaResponsavel() {
+	private void invokTelaResponsavel() { //CHAMA A TELA DE CADASTRO DO RESPONSÁVEL (ACADÊMICO E/OU FINANCEIRO)
 		Responsavel dialog = new Responsavel();
 		dialog.setVisible(true);
 	}
 
-	public void setPosicao() {
+	public void setPosicao() { //INVOCA A TELA CENTRALIZADA DENTRO DO DESKTOP PANE
 		Dimension d = this.getDesktopPane().getSize();
 		this.setLocation((d.width - this.getSize().width) / 2, (d.height - this.getSize().height) / 2);
 	}
@@ -90,6 +90,7 @@ public class IntFrmMatricula extends JInternalFrame {
 		setClosable(true);
 		setBounds(100, 100, 1060, 555);
 		getContentPane().setLayout(null);
+		
 
 		chckbxPrimeiroano = new JCheckBox("PRIMEIRO ANO");
 		buttonGroup.add(chckbxPrimeiroano);
