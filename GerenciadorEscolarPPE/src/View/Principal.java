@@ -23,6 +23,10 @@ import javax.swing.JTabbedPane;
 import javax.swing.JToolBar;
 import javax.swing.JLabel;
 import javax.swing.JLayeredPane;
+import javax.swing.JScrollPane;
+import javax.swing.border.TitledBorder;
+import java.awt.Font;
+import javax.swing.ListSelectionModel;
 
 public class Principal {
 
@@ -31,6 +35,9 @@ public class Principal {
 	private JButton btnMatricula;
 	private JTabbedPane tabbedPane;
 	private JPanel principal;
+	private JSeparator separator_1;
+	private JSeparator separator_2;
+	private JTable table;
 	
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
@@ -78,23 +85,72 @@ public class Principal {
 				invokTelaMatricula();
 }
 		});
-		btnMatricula.setBounds(67, 48, 125, 62);
+		btnMatricula.setBounds(88, 42, 125, 62);
 		frame.getContentPane().add(btnMatricula);
 		
 		tabbedPane = new JTabbedPane(JTabbedPane.TOP);
-		tabbedPane.setBounds(88, 140, 1670, 323);
+		tabbedPane.setBounds(705, 445, 546, 155);
 		frame.getContentPane().add(tabbedPane);
 		
 		principal = new JPanel();
 		tabbedPane.addTab("PRINCIPAL", null, principal, null);
 		
-		JPanel panel_1 = new JPanel();
-		tabbedPane.addTab("CADASTROS", null, panel_1, null);
+		JPanel cadastros = new JPanel();
+		tabbedPane.addTab("CADASTROS", null, cadastros, null);
 		
-		JPanel panel_2 = new JPanel();
-		tabbedPane.addTab("CONSULTAS", null, panel_2, null);
+		JPanel consultas = new JPanel();
+		tabbedPane.addTab("CONSULTAS", null, consultas, null);
 		
 		JPanel panel_3 = new JPanel();
-		tabbedPane.addTab("New tab", null, panel_3, null);
+		tabbedPane.addTab("**********", null, panel_3, null);
+		
+		JSeparator separator = new JSeparator();
+		separator.setBounds(82, 404, 1670, 2);
+		frame.getContentPane().add(separator);
+		
+		separator_1 = new JSeparator();
+		separator_1.setBounds(82, 160, 815, 2);
+		frame.getContentPane().add(separator_1);
+		
+		separator_2 = new JSeparator();
+		separator_2.setBounds(937, 160, 815, 2);
+		frame.getContentPane().add(separator_2);
+		
+		JScrollPane scrollPane = new JScrollPane();
+		scrollPane.setBounds(937, 175, 815, 190);
+		frame.getContentPane().add(scrollPane);
+		
+		table = new JTable();
+		table.setSelectionMode(ListSelectionModel.MULTIPLE_INTERVAL_SELECTION);
+		table.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		table.setCellSelectionEnabled(true);
+		table.setShowVerticalLines(false);
+		scrollPane.setViewportView(table);
+		table.setModel(new DefaultTableModel(
+			new Object[][] {
+				{null, null, null, null},
+				{null, null, null, null},
+				{null, null, null, null},
+				{null, null, null, null},
+				{null, null, null, null},
+				{null, null, null, null},
+				{null, null, null, null},
+				{null, null, null, null},
+				{null, null, null, null},
+				{null, null, null, null},
+			},
+			new String[] {
+				"NOME", "CURSO(S)", "IES", "LOCAL"
+			}
+		) {
+			boolean[] columnEditables = new boolean[] {
+				false, false, true, true
+			};
+			public boolean isCellEditable(int row, int column) {
+				return columnEditables[column];
+			}
+		});
+		table.getColumnModel().getColumn(1).setResizable(false);
+		table.getColumnModel().getColumn(1).setPreferredWidth(33);
 	}
 }
